@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá bộ sưu tập thời trang và phụ kiện tại LUXURY STORE.">
+    <title>LUXURY STORE | Bộ sưu tập sản phẩm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+    <script src="js/reviews.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#" aria-label="LUXURY STORE - Trang chủ">
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span class="brand-copy">
+                    <span class="brand-name">LUXURY</span>
+                    <span class="brand-tagline">STORE</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Điều hướng chính">
+                <a class="nav-link" href="#home">Trang chủ</a>
+                <a class="nav-link is-current" href="#products" aria-current="page">Sản phẩm</a>
+                <a class="nav-link" href="#about">Giới thiệu</a>
+                <a class="nav-link" href="#contact">Liên hệ</a>
+                <a class="nav-link admin-nav-link" href="login.html">Đăng nhập Admin</a>
+            </nav>
+
+            <button class="cart-link" id="cart-toggle" type="button" aria-label="Giỏ hàng, 0 sản phẩm" aria-expanded="false" aria-controls="mini-cart">
+                <span aria-hidden="true">🛒</span>
+                <span>Giỏ hàng</span>
+                <span class="cart-count">0</span>
+            </button>
+            <section class="mini-cart" id="mini-cart" aria-labelledby="mini-cart-title" hidden>
+                <div class="mini-cart-heading">
+                    <h2 id="mini-cart-title">Giỏ hàng</h2>
+                    <button class="mini-cart-close" type="button" aria-label="Đóng giỏ hàng">&times;</button>
+                </div>
+                <div class="mini-cart-table-wrap">
+                    <table class="mini-cart-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">SL</th>
+                                <th scope="col">Tạm tính</th>
+                                <th scope="col"><span class="visually-hidden">Thao tác</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="mini-cart-items"></tbody>
+                    </table>
+                </div>
+                <div class="mini-cart-footer">
+                    <span>Tổng tiền</span>
+                    <strong id="mini-cart-total">$0.00</strong>
+                </div>
+                <button class="checkout-start" id="checkout-start" type="button">Thanh toán</button>
+                <form class="checkout-form" id="checkout-form" novalidate hidden>
+                    <h3>Thông tin giao hàng</h3>
+                    <div class="checkout-field">
+                        <label for="checkout-name">Họ và tên</label>
+                        <input id="checkout-name" name="name" type="text" autocomplete="name" required>
+                        <small class="field-error" id="checkout-name-error"></small>
+                    </div>
+                    <div class="checkout-field">
+                        <label for="checkout-phone">Số điện thoại</label>
+                        <input id="checkout-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" pattern="(03|05|07|08|09)[0-9]{8}" maxlength="10" required>
+                        <small class="field-error" id="checkout-phone-error"></small>
+                    </div>
+                    <div class="checkout-field">
+                        <label for="checkout-email">Email</label>
+                        <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+                        <small class="field-error" id="checkout-email-error"></small>
+                    </div>
+                    <div class="checkout-field">
+                        <label for="checkout-address">Địa chỉ giao hàng</label>
+                        <textarea id="checkout-address" name="address" rows="2" autocomplete="street-address" required></textarea>
+                        <small class="field-error" id="checkout-address-error"></small>
+                    </div>
+                    <div class="checkout-actions">
+                        <button class="checkout-submit" type="submit">Xác nhận thanh toán</button>
+                        <button class="checkout-cancel" id="checkout-cancel" type="button">Quay lại giỏ hàng</button>
+                    </div>
+                </form>
+                <p class="checkout-message" id="checkout-message" role="status" aria-live="polite"></p>
+            </section>
+        </div>
+    </header>
+
+    <section class="page-intro" id="home" aria-labelledby="page-title">
+        <p class="eyebrow">LUXURY STORE</p>
+        <h1 id="page-title">Khám phá sản phẩm</h1>
+        <p class="intro-copy">Tìm món đồ phù hợp với phong cách của bạn trong bộ sưu tập được tuyển chọn.</p>
+    </section>
+
+    <main class="shop-layout" id="products">
+        <aside class="filter-panel" aria-labelledby="filter-title">
+            <div class="filter-heading">
+                <span class="filter-icon" aria-hidden="true">☷</span>
+                <h2 class="filter-title" id="filter-title">Tìm kiếm nâng cao</h2>
+            </div>
+
+            <form class="filter-form" id="product-filter-form" action="#products" method="get">
+                <div class="filter-group">
+                    <label class="field-label" for="category">Danh mục</label>
+                    <select id="category" name="category">
+                        <option value="all" selected>Tất cả danh mục</option>
+                        <option value="men's clothing">Thời trang nam</option>
+                        <option value="women's clothing">Thời trang nữ</option>
+                        <option value="jewelery">Trang sức</option>
+                        <option value="electronics">Điện tử</option>
+                    </select>
+                </div>
+
+                <fieldset class="filter-group price-filter">
+                    <legend class="field-label">Khoảng giá</legend>
+                    <div class="price-values">
+                        <span>$0</span>
+                        <span>$1,000</span>
+                    </div>
+                    <label class="visually-hidden" for="price">Giá tối đa, từ 0 đến 1.000 đô la</label>
+                    <input id="price" name="price" type="range" min="0" max="1000" step="10" value="1000">
+                    <p class="field-hint">Giá tối đa: <output id="price-value" for="price">$1,000</output></p>
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend class="field-label">Màu sắc</legend>
+                    <div class="color-options">
+                        <label class="color-choice">
+                            <input type="radio" name="color" value="all" checked>
+                            <span class="color-swatch swatch-all" aria-hidden="true"></span>
+                            <span>Tất cả màu</span>
+                        </label>
+                        <label class="color-choice">
+                            <input type="radio" name="color" value="Nâu">
+                            <span class="color-swatch swatch-brown" aria-hidden="true"></span>
+                            <span>Nâu</span>
+                        </label>
+                        <label class="color-choice">
+                            <input type="radio" name="color" value="Xanh navy">
+                            <span class="color-swatch swatch-navy" aria-hidden="true"></span>
+                            <span>Xanh navy</span>
+                        </label>
+                        <label class="color-choice">
+                            <input type="radio" name="color" value="Trắng">
+                            <span class="color-swatch swatch-white" aria-hidden="true"></span>
+                            <span>Trắng</span>
+                        </label>
+                        <label class="color-choice">
+                            <input type="radio" name="color" value="Vàng và bạc">
+                            <span class="color-swatch swatch-gold" aria-hidden="true"></span>
+                            <span>Vàng và bạc</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="filter-group">
+                    <label class="field-label" for="rating">Đánh giá tối thiểu</label>
+                    <select id="rating" name="rating">
+                        <option value="0" selected>Tất cả đánh giá (1-5 sao)</option>
+                        <option value="5">★★★★★ — 5 sao</option>
+                        <option value="4">★★★★☆ — Từ 4 sao</option>
+                        <option value="3">★★★☆☆ — Từ 3 sao</option>
+                        <option value="2">★★☆☆☆ — Từ 2 sao</option>
+                        <option value="1">★☆☆☆☆ — Từ 1 sao</option>
+                    </select>
+                </div>
+
+                <button class="filter-submit" type="submit">Áp dụng bộ lọc</button>
+                <button class="clear-filters" type="reset">Xóa bộ lọc</button>
+            </form>
+
+            <div class="filter-note">
+                <span aria-hidden="true">✦</span>
+                <p>Bộ sưu tập được chọn lọc dành riêng cho phong cách của bạn.</p>
+            </div>
+        </aside>
+
+        <section class="catalog" aria-labelledby="catalog-title">
+            <div class="catalog-toolbar">
+                <div>
+                    <p class="eyebrow">BỘ SƯU TẬP</p>
+                    <h2 id="catalog-title">Sản phẩm nổi bật</h2>
+                </div>
+                <p class="result-count">Hiển thị <strong id="product-count">0</strong> sản phẩm</p>
+            </div>
+
+            <div class="skeleton-grid" aria-hidden="true">
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-line skeleton-category"></div>
+                    <div class="skeleton skeleton-line skeleton-title"></div>
+                    <div class="skeleton skeleton-line skeleton-price"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-line skeleton-category"></div>
+                    <div class="skeleton skeleton-line skeleton-title"></div>
+                    <div class="skeleton skeleton-line skeleton-price"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-line skeleton-category"></div>
+                    <div class="skeleton skeleton-line skeleton-title"></div>
+                    <div class="skeleton skeleton-line skeleton-price"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-line skeleton-category"></div>
+                    <div class="skeleton skeleton-line skeleton-title"></div>
+                    <div class="skeleton skeleton-line skeleton-price"></div>
+                </div>
+            </div>
+
+            <p class="catalog-status" id="catalog-status" role="status" aria-live="polite"></p>
+            <div class="product-grid" id="product-list" aria-live="polite" aria-busy="true"></div>
+            <p class="empty-products" id="empty-products" hidden>Không tìm thấy sản phẩm phù hợp với bộ lọc.</p>
+        </section>
+    </main>
+
+    <dialog class="quick-view-dialog" id="quick-view-dialog" aria-labelledby="quick-view-title">
+        <div class="quick-view-content">
+            <button class="quick-view-close" type="submit" form="quick-view-close-form" aria-label="Đóng xem nhanh">&times;</button>
+            <img class="quick-view-image" id="quick-view-image" src="" alt="">
+            <div class="quick-view-info">
+                <p class="product-category" id="quick-view-category"></p>
+                <h2 id="quick-view-title"></h2>
+                <p class="quick-view-description" id="quick-view-description"></p>
+                <p class="quick-view-variant" id="quick-view-variant"></p>
+                <p class="product-price" id="quick-view-price"></p>
+                <form id="quick-view-close-form" method="dialog">
+                    <button class="filter-submit" type="submit">Đóng</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="quick-view-dialog rating-detail-dialog" id="rating-detail-dialog" aria-labelledby="rating-detail-title">
+        <div class="rating-detail-content">
+            <form method="dialog">
+                <button class="quick-view-close" type="submit" aria-label="Đóng chi tiết đánh giá">&times;</button>
+            </form>
+            <p class="eyebrow">KHÁCH HÀNG ĐÁNH GIÁ</p>
+            <h2 id="rating-detail-title">Chi tiết đánh giá</h2>
+            <p class="rating-detail-summary" id="rating-detail-summary" aria-live="polite"></p>
+            <ul class="review-detail-list" id="rating-detail-list"></ul>
+        </div>
+    </dialog>
+
+    <footer class="site-footer" id="contact">
+        <p class="footer-brand">LUXURY <span>STORE</span></p>
+        <p>Phong cách riêng, lựa chọn của bạn.</p>
+        <p class="footer-credit">Designed by <strong>Le Thi Ngoc Han K244161781</strong></p>
+    </footer>
+</body>
+</html>

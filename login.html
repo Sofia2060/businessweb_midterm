@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đăng nhập khu vực quản trị LUXURY STORE.">
+    <title>Đăng nhập quản trị | LUXURY STORE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/admin.js" defer></script>
+</head>
+<body data-page="login">
+    <main class="admin-login-page">
+        <a class="brand admin-login-brand" href="index.html" aria-label="LUXURY STORE - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">L</span>
+            <span class="brand-copy">
+                <span class="brand-name">LUXURY</span>
+                <span class="brand-tagline">STORE</span>
+            </span>
+        </a>
+
+        <section class="admin-login-card" aria-labelledby="login-title">
+            <p class="eyebrow">LUXURY STORE · KHU VỰC QUẢN TRỊ</p>
+            <h1 id="login-title">Đăng nhập Admin</h1>
+            <p class="admin-login-copy">Đăng nhập bằng tài khoản nhân viên có quyền quản lý.</p>
+            <p class="admin-demo-note">💡 <strong>Tài khoản Demo:</strong> Tên đăng nhập: <code>le.han</code> | Mật khẩu: <code>123456</code></p>
+            <form id="admin-login-form" novalidate>
+                <div class="admin-form-field">
+                    <label for="admin-username">Tên đăng nhập</label>
+                    <input id="admin-username" name="username" type="text" autocomplete="username" required>
+                </div>
+                <div class="admin-form-field">
+                    <label for="admin-password">Mật khẩu</label>
+                    <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="checkout-submit admin-login-submit" type="submit">Đăng nhập</button>
+                <p class="admin-login-error" id="admin-login-error" role="alert" aria-live="polite"></p>
+            </form>
+            <a class="admin-back-link" href="index.html">Quay lại cửa hàng</a>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bảng điều khiển và quản lý đơn hàng LUXURY STORE.">
+    <title>Quản lý đơn hàng | LUXURY STORE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/admin.js" defer></script>
+</head>
+<body data-page="admin">
+    <header class="site-header admin-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="LUXURY STORE - Cửa hàng">
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span class="brand-copy">
+                    <span class="brand-name">LUXURY</span>
+                    <span class="brand-tagline">STORE</span>
+                </span>
+            </a>
+            <div class="admin-header-actions">
+                <span class="admin-user" id="admin-user"></span>
+                <button class="admin-logout" id="admin-logout" type="button">Đăng xuất</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-dashboard">
+        <section class="admin-dashboard-heading" aria-labelledby="admin-title">
+            <p class="eyebrow">LUXURY STORE · QUẢN TRỊ</p>
+            <h1 id="admin-title">Quản lý đơn hàng</h1>
+            <p>Theo dõi hóa đơn mẫu và các đơn hàng phát sinh từ cửa hàng.</p>
+        </section>
+
+        <section class="admin-stat-grid" aria-label="Thống kê bán hàng">
+            <article class="admin-stat-card">
+                <span>Tổng số đơn hàng</span>
+                <strong id="admin-order-count">—</strong>
+            </article>
+            <article class="admin-stat-card">
+                <span>Sản phẩm đã bán</span>
+                <strong id="admin-units-sold">—</strong>
+            </article>
+            <article class="admin-stat-card">
+                <span>Tổng doanh thu mô phỏng</span>
+                <strong id="admin-revenue">—</strong>
+            </article>
+        </section>
+
+        <section class="admin-orders-panel" aria-labelledby="orders-title">
+            <div class="admin-orders-heading">
+                <div>
+                    <p class="eyebrow">BÁO CÁO BÁN HÀNG</p>
+                    <h2 id="orders-title">Danh sách đơn hàng</h2>
+                </div>
+                <button class="admin-refresh" id="admin-refresh" type="button">Tải lại dữ liệu</button>
+            </div>
+            <p class="admin-data-status" id="admin-data-status" role="status" aria-live="polite">Đang tải dữ liệu đơn hàng…</p>
+            <div class="admin-table-wrap">
+                <table class="admin-orders-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Mã đơn</th>
+                            <th scope="col">Ngày tạo</th>
+                            <th scope="col">Khách hàng</th>
+                            <th scope="col">Nhân viên</th>
+                            <th scope="col">Chi tiết sản phẩm</th>
+                            <th scope="col">SL bán</th>
+                            <th scope="col">Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-orders-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
