@@ -1,0 +1,34 @@
+[
+  {
+    "id": "C001",
+    "username": "minh.ngoc",
+    "password": "demo-customer-001",
+    "name": "Phạm Minh Ngọc",
+    "email": "minh.ngoc@example.com",
+    "phone": "0900000001"
+  },
+  {
+    "id": "C002",
+    "username": "quang.huy",
+    "password": "demo-customer-002",
+    "name": "Nguyễn Quang Huy",
+    "email": "quang.huy@example.com",
+    "phone": "0900000002"
+  },
+  {
+    "id": "C003",
+    "username": "thao.my",
+    "password": "demo-customer-003",
+    "name": "Trần Thảo My",
+    "email": "thao.my@example.com",
+    "phone": "0900000003"
+  },
+  {
+    "id": "C004",
+    "username": "duc.long",
+    "password": "demo-customer-004",
+    "name": "Lê Đức Long",
+    "email": "duc.long@example.com",
+    "phone": "0900000004"
+  }
+]

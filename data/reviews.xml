@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reviews>
+  <review>
+    <product_id>1</product_id>
+    <customer_name>Phạm Minh Ngọc</customer_name>
+    <rating>5</rating>
+    <comment>Ba lô rộng rãi, ngăn đựng laptop chắc chắn và tiện dụng.</comment>
+  </review>
+  <review>
+    <product_id>2</product_id>
+    <customer_name>Trần Thảo My</customer_name>
+    <rating>4</rating>
+    <comment>Áo mặc nhẹ và thoải mái, giao hàng đúng hẹn.</comment>
+  </review>
+  <review>
+    <product_id>3</product_id>
+    <customer_name>Nguyễn Quang Huy</customer_name>
+    <rating>5</rating>
+    <comment>Áo khoác đẹp, chất vải phù hợp thời tiết mát.</comment>
+  </review>
+  <review>
+    <product_id>4</product_id>
+    <customer_name>Lê Đức Long</customer_name>
+    <rating>3</rating>
+    <comment>Sản phẩm ổn, nhưng dáng áo hơi ôm so với mong đợi.</comment>
+  </review>
+  <review>
+    <product_id>5</product_id>
+    <customer_name>Phạm Minh Ngọc</customer_name>
+    <rating>5</rating>
+    <comment>Vòng tay tinh xảo, phối màu vàng bạc rất nổi bật.</comment>
+  </review>
+</reviews>

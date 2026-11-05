@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products source="FakeStoreAPI" currency="USD">
+  <product>
+    <id>1</id>
+    <title>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</title>
+    <price>109.95</price>
+    <description>Ba lô dã ngoại có ngăn đệm dành cho máy tính xách tay tối đa 15 inch.</description>
+    <category>men's clothing</category>
+    <image>https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png</image>
+    <color>Nâu</color>
+    <stock>18</stock>
+  </product>
+  <product>
+    <id>2</id>
+    <title>Mens Casual Premium Slim Fit T-Shirts</title>
+    <price>22.30</price>
+    <description>Áo thun nam dáng slim fit, tay dài, chất liệu nhẹ phù hợp mặc hằng ngày.</description>
+    <category>men's clothing</category>
+    <image>https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png</image>
+    <color>Xanh navy</color>
+    <stock>42</stock>
+  </product>
+  <product>
+    <id>3</id>
+    <title>Mens Cotton Jacket</title>
+    <price>55.99</price>
+    <description>Áo khoác cotton nam dùng trong thời tiết mát hoặc se lạnh.</description>
+    <category>men's clothing</category>
+    <image>https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png</image>
+    <color>Xanh navy</color>
+    <stock>12</stock>
+  </product>
+  <product>
+    <id>4</id>
+    <title>Mens Casual Slim Fit</title>
+    <price>15.99</price>
+    <description>Áo nam dáng slim fit phong cách thường ngày.</description>
+    <category>men's clothing</category>
+    <image>https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png</image>
+    <color>Trắng</color>
+    <stock>25</stock>
+  </product>
+  <product>
+    <id>5</id>
+    <title>John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet</title>
+    <price>695.00</price>
+    <description>Vòng tay dây chuyền vàng và bạc thuộc bộ sưu tập Legends Naga.</description>
+    <category>jewelery</category>
+    <image>https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png</image>
+    <color>Vàng và bạc</color>
+    <stock>7</stock>
+  </product>
+</products>
